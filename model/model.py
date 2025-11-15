@@ -46,7 +46,7 @@ class Model:
         :return: costo ottimale (cioè quello minimizzato dalla sequenza scelta)
         """
         self.__sequenza_ottima = []
-        self.__costo_ottimo = -1
+        self.__costo_ottimo = float("inf")
         consumi_settimana = self.__get_consumi_prima_settimana_mese(mese)
 
         self.__ricorsione([], 1, None, 0, consumi_settimana)
