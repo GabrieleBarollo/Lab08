@@ -61,7 +61,7 @@ class Model:
     def __ricorsione(self, sequenza_parziale, giorno, ultimo_impianto, costo_corrente, consumi_settimana):
         """ Implementa la ricorsione """
         # TODO
-
+        print(sequenza_parziale) #debugg
         if len(sequenza_parziale) == 7:
             if costo_corrente < self.__costo_ottimo:
                 self.__costo_ottimo = costo_corrente
