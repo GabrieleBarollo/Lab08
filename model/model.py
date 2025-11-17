@@ -1,3 +1,5 @@
+import copy
+
 from database.impianto_DAO import ImpiantoDAO
 
 '''
@@ -59,10 +61,12 @@ class Model:
     def __ricorsione(self, sequenza_parziale, giorno, ultimo_impianto, costo_corrente, consumi_settimana):
         """ Implementa la ricorsione """
         # TODO
-        if giorno == 7:
+
+        if len(sequenza_parziale) == 7:
             if costo_corrente < self.__costo_ottimo:
                 self.__costo_ottimo = costo_corrente
-                self.__sequenza_ottima = sequenza_parziale
+                #self.__sequenza_ottima = copy.deepcopy(sequenza_parziale)
+                self.__sequenza_ottima = sequenza_parziale[:]
             return
 
         for impianto in self._impianti:
